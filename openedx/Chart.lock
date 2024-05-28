@@ -1,0 +1,6 @@
+dependencies:
+- name: harmony-chart
+  repository: https://openedx.github.io/openedx-k8s-harmony
+  version: 0.7.3
+digest: sha256:05df53a784c3646b4b2f55b3278177fba91aba8aa407db958268d3df701c1c05
+generated: "2024-05-28T05:50:10.8825512Z"

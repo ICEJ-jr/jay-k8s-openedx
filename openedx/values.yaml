@@ -1,0 +1,7 @@
+openedx-harmony:
+  ingress-nginx:
+    enabled: false
+
+  cert-manager:
+    enabled: false
+
