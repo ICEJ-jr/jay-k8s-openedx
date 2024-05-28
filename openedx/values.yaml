@@ -6,4 +6,7 @@ harmony-chart:
 
   cert-manager:
     enabled: false
-
+    installCRDs: false
+    # Email address associated with the ACME account. Used to notify about expiring
+    # certificates.
+    email: ""
