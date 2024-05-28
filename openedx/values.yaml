@@ -2,7 +2,7 @@ harmony-chart:
   ingress-nginx:
     enabled: false
     controller:
-      ingressClassName: nginx
+      ingressClass: nginx
 
   cert-manager:
     enabled: false
