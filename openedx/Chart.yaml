@@ -1,6 +1,6 @@
 apiVersion: v2
 name: openedx
-description: A Helm chart for Lonhorn Bock Storage for Kubernetes
+description: A Helm chart for OpenEdx for Kubernetes
 
 type: application
 

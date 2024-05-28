@@ -1,4 +1,5 @@
 harmony-chart:
+  clusterDomain: cluster.local
   ingress-nginx:
     enabled: false
     controller:
