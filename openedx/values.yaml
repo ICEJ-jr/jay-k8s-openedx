@@ -1,13 +1,9 @@
 harmony-chart:
-  clusterDomain: cluster.local
+  clusterDomain: openedx.icejohnson.me
   ingress-nginx:
     enabled: false
     controller:
-      ingressClass: "nginx"
+      ingressClass: "contour"
 
   cert-manager:
     enabled: false
-    installCRDs: false
-    # Email address associated with the ACME account. Used to notify about expiring
-    # certificates.
-    email: ""
