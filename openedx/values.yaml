@@ -1,4 +1,4 @@
-openedx-harmony:
+harmony-chart:
   ingress-nginx:
     enabled: false
 
