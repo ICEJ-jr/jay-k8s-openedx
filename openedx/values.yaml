@@ -6,3 +6,6 @@ harmony-chart:
   cert-manager:
     enabled: false
 
+  ingress:
+    enabled: false
+
