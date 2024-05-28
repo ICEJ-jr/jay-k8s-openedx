@@ -1,0 +1,32 @@
+name: Install Openedx
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/add-openedx-to-argocd.yaml'
+      - 'ansible/add-openedx-to-argocd.yaml'
+      - 'openedx-application.yaml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-kubectl@v3
+      - name: Write KUBECONFIG FILE
+        id: write_kubeconfig
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: 'config'
+          fileDir: './.kube/'
+          encodedString: ${{ secrets.KUBE_CONFIG_DATA }}
+
+      - uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: add-openedx-to-argocd.yaml
+          directory: ./ansible
+          inventory: |          
+            [local]
+            localhost ansible_connection=local

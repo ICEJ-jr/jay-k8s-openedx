@@ -1,0 +1,30 @@
+---
+- name: Configure Contour Ingress controller
+  hosts: local
+  become: yes
+  collections:
+    - kubernetes.core
+  tasks:
+    - name: Populate Apt's Cache with package definitions to avoid "no such package" errors
+      apt:
+        update_cache: true
+
+    - name: Install python3-pip package
+      become: yes
+      package:
+        name: python3-pip
+        state: present
+
+    - name: Install yaml package
+      pip:
+        name: pyyaml
+
+    - name: Install kubernetes package
+      pip:
+        name: kubernetes
+
+    - name: add openedx to argocd
+      kubernetes.core.k8s:
+        state: present
+        src: ../openedx-application.yaml
+        kubeconfig: ../.kube/config

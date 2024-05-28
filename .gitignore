@@ -1,0 +1,6 @@
+# my files
+**/templates/**
+scripts.sh
+*.pem
+*.pub
+icej-cluster-kubeconfig

@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openedx
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  source:
+    path: openedx
+    repoURL: https://github.com/ICEJ-jr/jay-k8s-openedx.git
+    targetRevision: HEAD # Replace with the Openedx version you'd like to install or upgrade to
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openedx
